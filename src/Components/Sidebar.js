@@ -13,7 +13,7 @@ class SideBar extends Component {
 
   render() {
     return (
-      <div style={{display:"inline", width:"30%", float:"left"}}>
+      <div style={{display:"block", width:"20%", float:"left", background:"yellow"}}>
         <h1>SIDEBAR</h1>
         <DateSelector></DateSelector>
         <CalendarList></CalendarList>

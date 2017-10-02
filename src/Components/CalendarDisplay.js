@@ -12,7 +12,7 @@ class CalendarDisplay extends Component {
   @observable viewMode = '';
   render() {
     return (
-      <div style={{display:"inline", float:"right", width:"80%"}}>
+      <div style={{display:"block", float:"right", width:"80%", background:"green"}}>
         <h1>calendar displayer</h1>
       </div>
     )

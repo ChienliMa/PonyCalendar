@@ -7,14 +7,14 @@ import './App.css';
 import Header from './Components/Header';
 import SideBar from './Components/Sidebar';
 import CalendarDisplay from './Components/CalendarDisplay';
-import ControlPannel from './Components/ControlPannel';
+import CalendarControlPannel from './Components/CalendarControlPannel';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header/>
-        <ControlPannel/>
+        <CalendarControlPannel/>
         <SideBar/>
         <CalendarDisplay/>
       </div>
