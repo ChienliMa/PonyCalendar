@@ -13,7 +13,7 @@ class CalendarDisplay extends Component {
   render() {
     return (
       <div style={{display:"block", float:"right", width:"80%", background:"green"}}>
-        <h1>calendar displayer</h1>
+        <h1>calendar display</h1>
       </div>
     )
   }

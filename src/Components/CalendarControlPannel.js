@@ -14,10 +14,10 @@ class CalendarControlPannel extends Component {
           <button>right</button>
         </div>
         <div style={{display:'block', float:"right"}}>
-          <button>year</button>
-          <button>month</button>
-          <button>week</button>
+          <button>agenda</button>
           <button>day</button>
+          <button>week</button>
+          <button>month</button>
         </div>
       </div>
     )

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {observable}  from 'mobx';
 import {observer} from 'mobx-react';
+import DateSelector from "./Sidebar/DateSelector";
+import CalendarList from "./Sidebar/CalendarList";
 
 @observer
 class SideBar extends Component {
@@ -22,20 +24,6 @@ class SideBar extends Component {
   }
 }
 
-class DateSelector extends Component {
-  render() {
-    return (
-      <div>date selector</div>
-    )
-  }
-}
 
-class CalendarList extends  Component {
-  render() {
-    return (
-      <div>calendar list</div>
-    )
-  }
-}
 
 export default SideBar;
