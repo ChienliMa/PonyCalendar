@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import {observable, extendObservable}  from 'mobx';
-import {observer} from 'mobx-react';
 import './App.css';
+
+import User from './stores';
 
 import Header from './Components/Header';
 import SideBar from './Components/Sidebar';
 import CalendarDisplay from './Components/CalendarDisplay';
 import CalendarControlPannel from './Components/CalendarControlPannel';
 
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
-        <CalendarControlPannel/>
-        <SideBar/>
-        <CalendarDisplay/>
+        <Header user={this.props.currUser} users={this.props.users}/>
+        <CalendarControlPannel currDate={this.props.currDate}/>
+        <SideBar selectedDate={this.props.selectedDate} user={this.props.user}/>
+        <CalendarDisplay selectedDate={this.props.selectedDate} user={this.props.user}/>
       </div>
     );
   }

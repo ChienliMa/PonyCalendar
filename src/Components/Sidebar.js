@@ -17,7 +17,7 @@ class SideBar extends Component {
     return (
       <div style={{display:"block", width:"20%", float:"left", background:"yellow"}}>
         <h1>SIDEBAR</h1>
-        <DateSelector></DateSelector>
+        <DateSelector selectedDate={this.props.selectedDate}></DateSelector>
         <CalendarList></CalendarList>
       </div>
     )

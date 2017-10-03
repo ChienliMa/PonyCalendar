@@ -25,15 +25,23 @@
     margin-bottom: 5px;
     font-size:13px;
     color: black;
-    background: #dddddd;
-}
-
-.days li .currMonth {
     background: white;
 }
 
+.days li .otherMonth {
+    background: gray;
+}
+
+.days li .currMonth {
+    background: green;
+}
+
 .days li .currDate {
-    color: cornflowerblue;
+    background: blue;
+}
+
+.days li .selectedDate {
+    background: yellow;
 }
 
 .header .next {
