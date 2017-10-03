@@ -1,22 +1,28 @@
 import {observable, computed, action}  from 'mobx';
 
 class User {
-    username = '';
-    calendars = observable([new Calendar("default")]);
+  username = '';
+  calendars = observable([new Calendar("default")]);
 
-    constructor(name) {
-        this.username = name;
-    }
+  constructor(name) {
+      this.username = name;
+  }
+
+  @action
+  addCalendar(name){
+    this.calendars.push(new Calendar(name));
+  }
+
 }
 
 class Calendar {
-    color = observable("red");
     eventLists = observable([]);
     eventMaps = observable({});
 
     constructor(name) {
         this.name = observable(name);
         this.visible = observable(true);
+        this.color = observable("#"+((1<<24)*Math.random()|0).toString(16));
     }
 }
 

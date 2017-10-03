@@ -4,7 +4,7 @@ import {observer} from 'mobx-react';
 
 
 @observer
-class CalendarControlPannel extends Component {
+class ControlPanel extends Component {
   render() {
     return(
       <div style={{display:'block', clear:'both', width:"80%", float:"right", marginLeft:"20%", background:"blue"}}>
@@ -24,4 +24,4 @@ class CalendarControlPannel extends Component {
   }
 }
 
-export default CalendarControlPannel;
+export default ControlPanel;
