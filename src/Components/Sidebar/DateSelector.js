@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {observable, computed, action}  from 'mobx';
 import {observer} from 'mobx-react';
 import './css/DateSelector.css';
-import {ObservableDate} from "../../stores";
-
 
 @observer
 class DateSelector extends Component {
@@ -18,34 +16,16 @@ class DateSelector extends Component {
 
     this.currDate = new Date();
     this.selectedDate = props.selectedDate;
-    this.dateDisplayed = observable({
-      year: props.selectedDate.year.get(),
-      month: props.selectedDate.month.get(),
-
-      toNextYear : action(()=>{this.year += 1}),
-      toPreviousYear : action(()=>{this.year -= 1}),
-
-      toNextMonth : action(()=>{
-        if (this.month == 12) {
-          this.month = 1;
-          this.year += 1;
-        }}),
-
-      toPreviousMonth : action(()=>{
-        if (this.month == 12) {
-          this.month = 12;
-          this.year -= 1;
-        }})
-
-    })
+    this.dateDisplayed = this.selectedDate.copy();
+    this.dateDisplayed.date.set(1);
   }
 
   renderHeader() {
     return (
       <div className='header'>
-        <button className="pre" onClick={this.dateDisplayed.toPreviousMonth}>left</button>
-        <span>{this.dateDisplayed.year}-{this.dateDisplayed.month}</span>
-        <button className="next" onClick={this.dateDisplayed.toNextMonth}>right</button>
+        <button className="pre" onClick={this.dateDisplayed.toPreviousMonth.bind(this.dateDisplayed)}>left</button>
+        <span>{this.dateDisplayed.year.get()}-{this.dateDisplayed.month.get()}</span>
+        <button className="next" onClick={this.dateDisplayed.toNextMonth.bind(this.dateDisplayed)}>right</button>
       </div>
     )
   }
@@ -65,23 +45,19 @@ class DateSelector extends Component {
   }
 
   renderBody() {
-    let weeks = [];
-    let date = new Date(this.dateDisplayed.year, this.dateDisplayed.month, 1);
+    let days = [];
+    let date = this.dateDisplayed.getDate();
+
     while (date.getDay() !== 0) date.setDate(date.getDate()-1);
+    let monthDisplayed = this.dateDisplayed.month.get()
     do {
-      weeks.push(this.renderWeek(date))
-    } while (date.getMonth() === this.dateDisplayed.month);
-    return weeks
-  }
-
-
-  renderWeek(date)  {
-    let week = [];
-    for (let i = 0;i < 7;i+=1) {
-      week.push(<DateCell date={new Date(date)} selectedDate={this.selectedDate} monthDisplayed={this.dateDisplayed.month}/>)
-      date.setDate(date.getDate()+1);
-    }
-    return <ul className="days">{week}</ul>
+      for (let i = 0;i < 7;i+=1) {
+        days.push(<DateCell key={date.toString()} date={date.toString()}
+                            selectedDate={this.selectedDate} dateDisplayed={this.dateDisplayed}/>);
+        date.setDate(date.getDate()+1);
+      }
+    } while (date.getMonth()+1 !== (monthDisplayed===12?1:monthDisplayed+1));
+    return <ul className="days">{days}</ul>
   }
 
   render() {
@@ -100,33 +76,36 @@ class DateCell extends Component {
     super(props);
     this.date = new Date(props.date);
     this.currDate = new Date();
-    this.selectedDate = props.selectedDate;
-    this.monthDisplayed = props.monthDisplayed;
   }
 
-  @computed get selected() {
-    return (this.date.getFullYear() === this.selectedDate.year
-            && this.date.getMonth() === this.selectedDate.month
-            && this.date.getDate() === this.selectedDate);
+  @action selectDay() {
+    if (this.date.getMonth() + 1 === this.props.dateDisplayed.month.get()){
+      this.props.selectedDate.setDate(this.date);
+      this.props.dateDisplayed.setDate(this.date);
+      this.props.dateDisplayed.date.set(1);
+    } else {
+      this.props.selectedDate.setDate(this.date);
+      this.props.dateDisplayed.setDate(this.date);
+      this.props.dateDisplayed.date.set(1);
+    }
   }
 
-  getElement(){
+  @computed get htmlClass() {
     let className = "";
-    if (this.selected){
+    if (this.props.selectedDate.compare(this.date)){
       className = "selectedDate";
-    } else if (this.date.getDate() === this.currDate.getDate()) {
+    } else if (this.date.toDateString() === this.currDate.toDateString()) {
       className = "currDate";
-    } else if (this.date.getMonth() === this.currDate.getMonth()) {
+    } else if (this.date.getMonth()+1 === this.props.dateDisplayed.month.get()) {
       className = "currMonth";
     } else {
       className = "otherMonth";
     }
-    return <a className={className}>{this.date.getDate()}</a>;
+    return className;
   }
 
-
   render() {
-    return <li>{this.getElement()}</li>;
+    return <li className={this.htmlClass}><div onClick={this.selectDay.bind(this)}>{this.date.getDate()}</div></li>;
   }
 }
 

@@ -12,7 +12,7 @@
 }
 
 .days {
-    padding: 1px 0;
+    padding: 0;
     background: #eee;
     margin: 0;
 }
@@ -22,25 +22,24 @@
     display: inline-block;
     width: 13.6%;
     text-align: center;
-    margin-bottom: 5px;
     font-size:13px;
     color: black;
     background: white;
 }
 
-.days li .otherMonth {
+.days .otherMonth {
     background: gray;
 }
 
-.days li .currMonth {
-    background: green;
+.days .currMonth {
+    background: white;
 }
 
-.days li .currDate {
-    background: blue;
+.days .currDate {
+    background: cornflowerblue;
 }
 
-.days li .selectedDate {
+.days .selectedDate {
     background: yellow;
 }
 

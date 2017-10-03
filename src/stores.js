@@ -2,7 +2,7 @@ import {observable, computed, action}  from 'mobx';
 
 class User {
     username = '';
-    calendars = []
+    calendars = observable([new Calendar("default")]);
 
     constructor(name) {
         this.username = name;
@@ -10,13 +10,13 @@ class User {
 }
 
 class Calendar {
-    color = "";
-    visible = true;
-    eventLists = [];
-    eventMaps = {};
+    color = observable("red");
+    eventLists = observable([]);
+    eventMaps = observable({});
 
     constructor(name) {
-        this.name = name;
+        this.name = observable(name);
+        this.visible = observable(true);
     }
 }
 
@@ -44,22 +44,55 @@ class ObservableDate {
   constructor(){
     let date = new Date();
     this.year = observable(date.getFullYear());
-    this.month = observable(date.getMonth());
+    this.month = observable(date.getMonth()+1);
     this.date = observable(date.getDate());
   }
 
-  @computed get day() {return new Date(this.year, this.month, this.date).getDay()}
+  compare(date) {
+    return (date.getFullYear() === this.year.get()
+      && date.getMonth() === this.month.get() - 1
+      && date.getDate() === this.date.get());
+  }
+
+  copy(){
+    let rval = new ObservableDate();
+    rval.setDate(this.getDate());
+    return rval;
+  }
 
   getDate() {
-    return new Date(this.year.get(), this.month.get(), this.date.get());
+    return new Date(this.year.get(), this.month.get()-1, this.date.get());
   }
 
   @action
   setDate(date){
     this.year.set(date.getFullYear());
-    this.month.set(date.getMonth());
+    this.month.set(date.getMonth()+1);
     this.date.set(date.getDate());
   }
+
+  @action toNextYear() {this.year.set(this.year.get()+1)};
+  @action toPreviousYear() {this.year.set(this.year.get()-1)};
+
+  @action toNextMonth() {
+    let month = this.month.get();
+    if (month === 12) {
+      this.month.set(1);
+      this.year.set(this.year.get()+1);
+    } else {
+      this.month.set(month+1);
+    }
+  };
+
+  @action toPreviousMonth() {
+    let month = this.month.get();
+    if (month === 1) {
+      this.month.set(12);
+      this.year.set(this.year.get()-1);
+    } else {
+      this.month.set(month-1);
+    }
+  };
 }
 
 export  {User, ObservableDate};

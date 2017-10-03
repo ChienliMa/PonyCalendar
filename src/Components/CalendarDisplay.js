@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {observable}  from 'mobx';
 import {observer} from 'mobx-react';
 
-import MonthlyView from './MonthlyView';
-import WeeklyView from './WeeklyView';
-import YearlyView from './YearlyView';
-import DailyView from './DailyView';
+import MonthlyView from './CalendarDisplay/MonthlyView';
+import WeeklyView from './CalendarDisplay/WeeklyView';
+import YearlyView from './CalendarDisplay/YearlyView';
+import DailyView from './CalendarDisplay/DailyView';
 
 @observer
 class CalendarDisplay extends Component {

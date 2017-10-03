@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Header user={this.props.currUser} users={this.props.users}/>
         <CalendarControlPannel currDate={this.props.currDate}/>
-        <SideBar selectedDate={this.props.selectedDate} user={this.props.user}/>
+        <SideBar selectedDate={this.props.selectedDate} user={this.props.currUser}/>
         <CalendarDisplay selectedDate={this.props.selectedDate} user={this.props.user}/>
       </div>
     );
