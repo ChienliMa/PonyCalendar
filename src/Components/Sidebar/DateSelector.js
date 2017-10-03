@@ -7,8 +7,7 @@ import './css/DateSelector.css';
 class DateSelector extends Component {
 
   currDate = new Date();
-  @observable yearDisplayed;
-  @observable monthDisplayed;
+  @observable dateDisplay;
   @observable selectedDate;
 
   constructor(props){
@@ -16,7 +15,7 @@ class DateSelector extends Component {
 
     this.currDate = new Date();
     this.selectedDate = props.selectedDate;
-    this.dateDisplayed = this.selectedDate.copy();
+    this.dateDisplayed = props.selectedDate.copy();
     this.dateDisplayed.date.set(1);
   }
 
@@ -47,13 +46,12 @@ class DateSelector extends Component {
   renderBody() {
     let days = [];
     let date = this.dateDisplayed.getDate();
-
     while (date.getDay() !== 0) date.setDate(date.getDate()-1);
-    let monthDisplayed = this.dateDisplayed.month.get()
+    let monthDisplayed = this.dateDisplayed.month.get();
     do {
       for (let i = 0;i < 7;i+=1) {
         days.push(<DateCell key={date.toString()} date={date.toString()}
-                            selectedDate={this.selectedDate} dateDisplayed={this.dateDisplayed}/>);
+                            selectedDate={this.props.selectedDate} dateDisplayed={this.dateDisplayed}/>);
         date.setDate(date.getDate()+1);
       }
     } while (date.getMonth()+1 !== (monthDisplayed===12?1:monthDisplayed+1));
@@ -71,6 +69,7 @@ class DateSelector extends Component {
   }
 }
 
+@observer
 class DateCell extends Component {
   constructor (props){
     super(props);
@@ -81,8 +80,6 @@ class DateCell extends Component {
   @action selectDay() {
     if (this.date.getMonth() + 1 === this.props.dateDisplayed.month.get()){
       this.props.selectedDate.setDate(this.date);
-      this.props.dateDisplayed.setDate(this.date);
-      this.props.dateDisplayed.date.set(1);
     } else {
       this.props.selectedDate.setDate(this.date);
       this.props.dateDisplayed.setDate(this.date);
@@ -105,7 +102,7 @@ class DateCell extends Component {
   }
 
   render() {
-    return <li className={this.htmlClass}><div onClick={this.selectDay.bind(this)}>{this.date.getDate()}</div></li>;
+    return <li className={this.htmlClass}><div onClick={this.selectDay.bind(this)}>{this.className}{this.date.getDate()}</div></li>;
   }
 }
 

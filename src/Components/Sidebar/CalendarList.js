@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {observable, action, computed}  from 'mobx';
+import {action, computed}  from 'mobx';
 import {observer} from 'mobx-react';
 
 @observer

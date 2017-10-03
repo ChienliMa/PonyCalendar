@@ -14,6 +14,7 @@ class CalendarDisplay extends Component {
     return (
       <div style={{display:"block", float:"right", width:"80%", background:"green"}}>
         <h1>calendar display</h1>
+        <h1>{this.props.selectedDate.getDate().toString()}</h1>
       </div>
     )
   }

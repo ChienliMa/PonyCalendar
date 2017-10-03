@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {observable, extendObservable}  from 'mobx';
 import './App.css';
 
-import User from './stores';
-
 import Header from './Components/Header';
 import SideBar from './Components/Sidebar';
 import CalendarDisplay from './Components/CalendarDisplay';
