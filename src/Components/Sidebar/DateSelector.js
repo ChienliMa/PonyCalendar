@@ -8,13 +8,11 @@ class DateSelector extends Component {
 
   currDate = new Date();
   @observable dateDisplay;
-  @observable selectedDate;
 
   constructor(props){
     super(props);
 
     this.currDate = new Date();
-    this.selectedDate = props.selectedDate;
     this.dateDisplayed = props.selectedDate.copy();
     this.dateDisplayed.date.set(1);
   }

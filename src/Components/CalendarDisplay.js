@@ -7,18 +7,23 @@ import ControlPanel from './CalendarDisplay/ControlPanel';
 
 @observer
 class CalendarDisplay extends Component {
-  @observable viewMode = 'monthly';
+  @observable displayMode = 'monthly';
+
+  constructor(props) {
+    super(props);
+    this.dateDisplayed = props.selectedDate.copy();
+  }
+
   render() {
     return (
       <div style={{display:"block", float:"right", width:"80%", background:"green"}}>
+        <ControlPanel selectedDate={this.props.selectedDate}
+                      dateDisplayed={this.dateDisplayed}
+                      displayMode={this.displayMode}/>
         <Display selectedDate={this.props.selectedDate}
                  calendars={this.props.user.calendars}
-                 viewMode={this.viewMode}/>
-
-        <ControlPanel selectedDate={this.props.selectedDate} viewMode={this.viewMode}/>
-
-        <h1>calendar display</h1>
-        <h1>{this.props.selectedDate.getDate().toString()}</h1>
+                 dateDisplayed={this.dateDisplayed}
+                 displayMode={this.displayMode}/>
       </div>
     )
   }

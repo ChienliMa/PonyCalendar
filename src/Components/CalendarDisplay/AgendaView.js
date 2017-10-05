@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import {action, computed} from 'mobx';
 import {observer} from 'mobx-react';
 
-
 @observer
-class DailyView extends Component {
+class AgendaView extends Component {
   @computed
   get display() {
     if (this.props.displayMode === "MonthlyView"){
@@ -20,11 +19,11 @@ class DailyView extends Component {
 
   render() {
     return <div>
-      <h1>calendar display</h1>
-      <h1>{this.props.selectedDate.getDate().toString()}</h1>
+        <h1>calendar display</h1>
+        <h1>{this.props.selectedDate.getDate().toString()}</h1>
       {this.display}
     </div>
   }
 }
 
-export default DailyView;
+export default AgendaView;

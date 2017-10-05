@@ -7,7 +7,7 @@ import {observer} from 'mobx-react';
 class ControlPanel extends Component {
   render() {
     return(
-      <div style={{display:'block', clear:'both', width:"80%", float:"right", marginLeft:"20%", background:"blue"}}>
+      <div style={{display:'block',width:"100%", background:"blue"}}>
         <div style={{display:"block", float:"left"}}>
           <button>today</button>
           <button>left </button>
