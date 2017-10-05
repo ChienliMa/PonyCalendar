@@ -7,7 +7,7 @@ import ControlPanel from './CalendarDisplay/ControlPanel';
 
 @observer
 class CalendarDisplay extends Component {
-  @observable displayMode = 'monthly';
+  displayMode = observable('MonthlyView');
 
   constructor(props) {
     super(props);
