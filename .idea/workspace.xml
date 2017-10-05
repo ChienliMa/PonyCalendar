@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f0ec599-55e2-47ed-bdd6-6cb9fdb5bd3b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/BasicTimeWindowView.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -215,7 +214,7 @@
       <workItem from="1506925954412" duration="5874000" />
       <workItem from="1506970319820" duration="30569000" />
       <workItem from="1507182611457" duration="4405000" />
-      <workItem from="1507187090851" duration="33000" />
+      <workItem from="1507187090851" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="add basic layout style">
       <created>1506964129940</created>
@@ -294,11 +293,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507187084282</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="delete unused class">
+      <created>1507187130902</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1507187130902</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49586000" />
+    <option name="totallyTimeSpent" value="49603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,7 +374,8 @@
     <MESSAGE value="view switch done" />
     <MESSAGE value="control panel fully functional" />
     <MESSAGE value="remove unused import" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unused import" />
+    <MESSAGE value="delete unused class" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unused class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
