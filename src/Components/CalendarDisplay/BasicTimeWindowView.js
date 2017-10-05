@@ -4,6 +4,7 @@ import {observer} from 'mobx-react';
 
 @observer
 class BasicTimeWindowView extends Component {
+
   @computed get dateDisplayed() {
     return this.props.dateDisplayed.get()
   }

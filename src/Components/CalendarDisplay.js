@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {observable}  from 'mobx';
+import {observable, autorun}  from 'mobx';
 import {observer} from 'mobx-react';
 
 import Display from './CalendarDisplay/Display';
@@ -12,7 +12,16 @@ class CalendarDisplay extends Component {
   constructor(props) {
     super(props);
     this.dateDisplayed = props.selectedDate.copy();
+    this.lastSelectedDate = this.props.selectedDate.getDate().toString();
   }
+
+  passiveSelectedDateSync = autorun(() => {
+    let selectedDate = this.props.selectedDate.getDate();
+    if (selectedDate.toString() !== this.lastSelectedDate) {
+      this.dateDisplayed.setDate(selectedDate);
+      this.lastSelectedDate = selectedDate.toString();
+    }
+  });
 
   render() {
     return (
@@ -20,8 +29,7 @@ class CalendarDisplay extends Component {
         <ControlPanel selectedDate={this.props.selectedDate}
                       dateDisplayed={this.dateDisplayed}
                       displayMode={this.displayMode}/>
-        <Display selectedDate={this.props.selectedDate}
-                 calendars={this.props.user.calendars}
+        <Display calendars={this.props.user.calendars}
                  dateDisplayed={this.dateDisplayed}
                  displayMode={this.displayMode}/>
       </div>

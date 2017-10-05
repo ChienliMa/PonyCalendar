@@ -33,7 +33,6 @@ class Display extends Component {
   render() {
     return <div>
       <h1>calendar display</h1>
-      <h1>{this.props.selectedDate.getDate().toString()}</h1>
       {this.display}
     </div>
   }

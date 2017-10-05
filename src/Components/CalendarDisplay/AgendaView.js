@@ -4,10 +4,6 @@ import {observer} from 'mobx-react';
 
 @observer
 class AgendaView extends Component {
-  @computed
-  get display() {
-
-  }
 
   render() {
     return <div>
