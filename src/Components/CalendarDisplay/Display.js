@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {action, computed} from 'mobx';
+import {computed} from 'mobx';
 import {observer} from 'mobx-react';
 
 import MonthlyView from './MonthlyView';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {observable, extendObservable}  from 'mobx';
 import './App.css';
 
 import Header from './Components/Header';

@@ -13,15 +13,16 @@ class CalendarDisplay extends Component {
     super(props);
     this.dateDisplayed = props.selectedDate.copy();
     this.lastSelectedDate = this.props.selectedDate.getDate().toString();
+
+    this.passiveSelectedDateSync = autorun(() => {
+      let selectedDate = this.props.selectedDate.getDate();
+      if (selectedDate.toString() !== this.lastSelectedDate) {
+        this.dateDisplayed.setDate(selectedDate);
+        this.lastSelectedDate = selectedDate.toString();
+      }
+    });
   }
 
-  passiveSelectedDateSync = autorun(() => {
-    let selectedDate = this.props.selectedDate.getDate();
-    if (selectedDate.toString() !== this.lastSelectedDate) {
-      this.dateDisplayed.setDate(selectedDate);
-      this.lastSelectedDate = selectedDate.toString();
-    }
-  });
 
   render() {
     return (

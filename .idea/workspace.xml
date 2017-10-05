@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f0ec599-55e2-47ed-bdd6-6cb9fdb5bd3b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/AgendaView.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/AgendaView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/BasicTimeWindowView.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/BasicTimeWindowView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/DailyView.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/DailyView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CalendarDisplay/WeeklyView.js" afterPath="$PROJECT_DIR$/src/Components/CalendarDisplay/WeeklyView.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,13 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CalendarDisplay.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay.js">
+      <file leaf-file-name="MonthlyView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="80">
+              <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,17 +92,17 @@
         <option value="$PROJECT_DIR$/src/stores.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPannel.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/DateSelector.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/BasicView.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/BasicTimeWindowView.js" />
-        <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js" />
-        <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/AgendaView.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/DailyView.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/WeeklyView.js" />
         <option value="$PROJECT_DIR$/src/Components/CalendarDisplay.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js" />
+        <option value="$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js" />
       </list>
     </option>
   </component>
@@ -221,7 +217,7 @@
       <workItem from="1506909359459" duration="8235000" />
       <workItem from="1506925954412" duration="5874000" />
       <workItem from="1506970319820" duration="30569000" />
-      <workItem from="1507182611457" duration="4091000" />
+      <workItem from="1507182611457" duration="4390000" />
     </task>
     <task id="LOCAL-00001" summary="add basic layout style">
       <created>1506964129940</created>
@@ -286,11 +282,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507184737746</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="control panel fully functional">
+      <created>1507186784233</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1507186784233</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49239000" />
+    <option name="totallyTimeSpent" value="49538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,7 +362,8 @@
     <MESSAGE value="refractor control panel" />
     <MESSAGE value="initialize views" />
     <MESSAGE value="view switch done" />
-    <option name="LAST_COMMIT_MESSAGE" value="view switch done" />
+    <MESSAGE value="control panel fully functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="control panel fully functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -513,16 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="86" lean-forward="false" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stores.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-637">
@@ -531,40 +525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/BasicTimeWindowView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -609,12 +573,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/Display.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="160">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/ControlPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/CalendarDisplay/MonthlyView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
